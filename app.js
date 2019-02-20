@@ -9,9 +9,12 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
 
     if (gameOn) {
         let dice = Math.floor(Math.random() * 6) + 1;
+        let dice2 = Math.floor(Math.random() * 6) + 1;
 
         document.querySelector('.dice').style.display = 'block';
         document.querySelector('.dice').src = 'dice-' + dice + '.png';
+        document.querySelector('.dice2').style.display = 'block';
+        document.querySelector('.dice2').src = 'dice-' + dice2 + '.png';
 
         if (dice === 6) {
             let six = dice;
@@ -31,8 +34,8 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
             //            nextPlayer();
             //        }
             //        });
-        } else if (dice !== 1) {
-            roundScore += dice;
+        } else if (dice !== 1 && dice2 !== 1) {
+            roundScore += (dice + dice2);
             document.querySelector('#current-' + activePlayer).textContent = roundScore;
         } else {
             nextPlayer();
@@ -79,6 +82,7 @@ function newGame() {
     gameOn = true;
 
     document.querySelector('.dice').style.display = 'none';
+    document.querySelector('.dice2').style.display = 'none';
 
     document.querySelector('#score-0').textContent = 0;
     document.querySelector('#score-1').textContent = 0;
