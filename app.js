@@ -20,20 +20,6 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
             let six = dice;
             roundScore += six;
             document.querySelector('#current-' + activePlayer).textContent = roundScore;
-            //        document.querySelector('.btn-roll').addEventListener('click', function () {
-            //            if (dice === six) {
-            //                roundScore = 0;
-            //                scores[activePlayer] = 0;
-            //                document.querySelector('#current-' + activePlayer).textContent = roundScore;
-            //                document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
-            //            }
-            //        } else if (dice !== 1) {
-            //            roundScore += dice;
-            //            document.querySelector('#current-' + activePlayer).textContent = roundScore;
-            //        } else {
-            //            nextPlayer();
-            //        }
-            //        });
         } else if (dice !== 1 && dice2 !== 1) {
             roundScore += (dice + dice2);
             document.querySelector('#current-' + activePlayer).textContent = roundScore;
@@ -46,8 +32,6 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
 
 document.querySelector('.btn-new').addEventListener('click', function () {
     newGame();
-
-    //come back paj!
 });
 
 document.querySelector('.btn-hold').addEventListener('click', function () {
